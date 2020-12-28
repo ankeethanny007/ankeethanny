@@ -1,0 +1,100 @@
+@import "variable.scss";
+
+.App {
+  background-color: $app-background;
+  color: $text-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  position: relative;
+  height: 90vh;
+  top: 0;
+  width: 90vw;
+  left: 5vw;
+  // border: 1px solid white;
+}
+
+.section {
+  padding: 0 3em 0 4em;
+}
+
+@include screenSize($small-screen) {
+  .section {
+    padding: 0 1em;
+  }
+}
+
+@include screenSize($mobile-screen) {
+  .section {
+    padding: 0 1em;
+  }
+}
+
+@include screenSize($tablet-screen) {
+  .section {
+    padding: 0 1em;
+  }
+}
+
+@include screenSize($desktop-screen) {
+  .section {
+    padding: 0 3em 0 4em;
+  }
+}
+
+@include screenSize($large-screen) {
+  .section {
+    padding: 0 3em 0 4em;
+  }
+}
+
+.active {
+  color: red;
+}
+
+.rubberBand {
+  white-space: pre-wrap;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  display: inline-block;
+  &:hover {
+    color: $text-color-hover;
+    animation-name: rubberBand;
+    transition: all $transition-time ease;
+    -webkit-transition: all $transition-time ease;
+  }
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

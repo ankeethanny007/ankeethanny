@@ -1,0 +1,38 @@
+$app-background: black;
+$text-color: white;
+$text-color-hover: darkcyan;
+$header-font-size: calc(10px + 2vmin);
+$background-color: rgba(255, 255, 255, 0.15);
+$background-color-hover: rgba(255, 255, 255, 0.8);
+$transition-time: 0.4s;
+
+//mixins
+$small-screen: 420px;
+$mobile-screen: 640px;
+$tablet-screen: 768px;
+$desktop-screen: 1280px;
+$large-screen: 1440px;
+
+@mixin screenSize($min-width) {
+    @if $min-width == $small-screen {
+        @media (min-width: $small-screen) and (max-width: $mobile-screen - 1px) {
+            @content;
+        }
+    } @else if $min-width == $mobile-screen {
+        @media (min-width: $mobile-screen) and (max-width: $tablet-screen - 1px) {
+            @content;
+        }
+    } @else if $min-width == $tablet-screen {
+        @media (min-width: $tablet-screen) and (max-width: $desktop-screen - 1px) {
+            @content;
+        }
+    } @else if $min-width == $desktop-screen {
+        @media (min-width: $desktop-screen) and (max-width: $large-screen - 1px) {
+            @content;
+        }
+    } @else if $min-width == $large-screen {
+        @media (min-width: $large-screen) {
+            @content;
+        }
+    }
+}
