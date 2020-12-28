@@ -1,0 +1,50 @@
+@import "./../../styles/variable.scss";
+
+#bottomnav {
+    position: fixed;
+    width: 750px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -375px;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            transition: $transition-time;
+            display: block;
+            float: left;
+            width: 150px;
+            padding: 15px 0;
+            background-color: $background-color;
+            backdrop-filter: blur(5px);
+            text-align: center;
+            &:first-child {
+                border-radius: 7px 0 0 0;
+            }
+            &:last-child {
+                border-radius: 0 7px 0 0;
+            }
+            &:hover {
+                background-color: $background-color-hover;
+                cursor: pointer;
+                a {
+                    color: $text-color-hover;
+                }
+            }
+            a {
+                text-decoration: none;
+                font-size: 2em;
+                color: $text-color;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+        .active {
+            background-color: $background-color-hover;
+            a {
+                color: $text-color-hover;
+            }
+        }
+    }
+}

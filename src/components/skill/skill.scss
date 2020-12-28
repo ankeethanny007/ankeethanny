@@ -1,0 +1,198 @@
+@import "./../../styles/variable.scss";
+
+.skill {
+    display: inline-block;
+    float: left;
+    line-height: 0.5em;
+    margin-top: 20px;
+}
+
+.skill-name {
+    width: 12vw;
+    height: 8vh;
+    text-align: right;
+    p {
+        font-size: 1.6em;
+    }
+}
+
+.skill-expertize {
+    width: 28vw;
+    height: 8vh;
+    margin-left: 2vw;
+    .skill-bar {
+        margin-top: 5%;
+        background: linear-gradient(90deg, $background-color 60%, $text-color-hover);
+        height: 1.2em;
+        span {
+            display: none;
+        }
+        &:hover {
+            span {
+                display: block;
+                position: relative;
+                font-size: 1em;
+                top: 24%;
+                float: right;
+            }
+            background: linear-gradient(90deg, $background-color 0%, $text-color-hover);
+        }
+    }
+}
+
+@include screenSize($small-screen) {
+    .skill {
+        line-height: 1em;
+        margin-top: 15px;
+    }
+
+    .skill-name {
+        width: 40vw;
+        height: 1vh;
+        text-align: left;
+        p {
+            font-size: 1.4em;
+            margin-left: 8px;
+        }
+    }
+
+    .skill-expertize {
+        width: 90vw;
+        height: 2vh;
+        margin-left: 2vw;
+        .skill-bar {
+            margin-top: 6%;
+            height: 1.5em;
+            &:hover {
+                span {
+                    font-size: 1em;
+                    top: 24%;
+                }
+            }
+        }
+    }    
+}
+
+@include screenSize($mobile-screen) {
+    .skill {
+        line-height: 1em;
+        margin-top: 15px;
+    }
+
+    .skill-name {
+        width: 27vw;
+        height: 4vh;
+        p {
+            font-size: 1.5em;
+        }
+    }
+
+    .skill-expertize {
+        width: 56vw;
+        height: 4vh;
+        margin-left: 2vw;
+        .skill-bar {
+            margin-top: 6%;
+            height: 1.5em;
+            &:hover {
+                span {
+                    font-size: 1em;
+                    top: 24%;
+                }
+            }
+        }
+    }
+}
+
+@include screenSize($tablet-screen) {
+    .skill {
+        line-height: 1em;
+        margin-top: 15px;
+    }
+
+    .skill-name {
+        width: 27vw;
+        height: 4vh;
+        p {
+            font-size: 2em;
+        }
+    }
+
+    .skill-expertize {
+        width: 56vw;
+        height: 4vh;
+        margin-left: 2vw;
+        .skill-bar {
+            margin-top: 6%;
+            height: 1.5em;
+            &:hover {
+                span {
+                    font-size: 1em;
+                    top: 24%;
+                }
+            }
+        }
+    }
+}
+
+@include screenSize($desktop-screen) {
+    .skill {
+        line-height: 0.5em;
+        margin-top: 20px;
+    }
+
+    .skill-name {
+        width: 13vw;
+        height: 8vh;
+        p {
+            font-size: 1.6em;
+        }
+    }
+
+    .skill-expertize {
+        width: 27vw;
+        height: 8vh;
+        margin-left: 2vw;
+        .skill-bar {
+            margin-top: 5%;
+            height: 1.2em;
+            &:hover {
+                span {
+                    font-size: 1em;
+                    top: 24%;
+                }
+            }
+        }
+    }
+}
+
+@include screenSize($large-screen) {
+    .skill {
+        line-height: 1em;
+        margin-top: 25px;
+    }
+
+    .skill-name {
+        width: 14vw;
+        height: 8vh;
+        p {
+            font-size: 2em;
+        }
+    }
+
+    .skill-expertize {
+        width: 26vw;
+        height: 8vh;
+        margin-left: 2vw;
+        .skill-bar {
+            margin-top: 5%;
+            height: 1.5em;
+            &:hover {
+                span {
+                    font-size: 1em;
+                    top: 24%;
+                }
+            }
+        }
+    }
+}

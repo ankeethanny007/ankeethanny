@@ -1,0 +1,41 @@
+@import "./../../styles/variable.scss";
+
+.container {
+    position: absolute;
+    top: calc(50% - 30px);
+    font-size: 30px;
+    .left-navigation {
+        color: $text-color;
+        transition: 1s;
+        position: absolute;
+        padding: 20px;
+        border-radius: 50%;
+        left: 0;
+        &:hover {
+            transition: 1s;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            color: $text-color-hover;
+            .container{
+                top: calc(50% - 25px);
+            }
+        }
+    }
+    .right-navigation {
+        color: $text-color;
+        transition: 1s;
+        position: absolute;
+        padding: 20px;
+        border-radius: 50%;
+        margin-left: calc(100vw - 70px);
+        &:hover {
+            transition: 1s;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            color: $text-color-hover;
+            .container{
+                top: calc(50% - 25px);
+            }
+        }
+    }
+}
