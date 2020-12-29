@@ -39,3 +39,33 @@
         }
     }
 }
+
+@include screenSize($small-screen) {
+    .container{
+        display: none;
+    }
+}
+
+@include screenSize($mobile-screen) {
+    .container{
+        display: none;
+    }
+}
+
+@include screenSize($tablet-screen) {
+    .container{
+        display: none;
+    }
+}
+
+@include screenSize($desktop-screen) {
+    .container{
+        display: block;
+    }
+}
+
+@include screenSize($large-screen) {
+    .container{
+        display: block;
+    }
+}

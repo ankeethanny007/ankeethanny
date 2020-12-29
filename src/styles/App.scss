@@ -14,7 +14,6 @@
   top: 0;
   width: 90vw;
   left: 5vw;
-  // border: 1px solid white;
 }
 
 .section {
@@ -41,13 +40,13 @@
 
 @include screenSize($desktop-screen) {
   .section {
-    padding: 0 3em 0 4em;
+    padding: 0 1em;
   }
 }
 
 @include screenSize($large-screen) {
   .section {
-    padding: 0 3em 0 4em;
+    padding: 0 1em;
   }
 }
 

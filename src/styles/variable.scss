@@ -7,7 +7,7 @@ $background-color-hover: rgba(255, 255, 255, 0.8);
 $transition-time: 0.4s;
 
 //mixins
-$small-screen: 420px;
+$small-screen: 360px;
 $mobile-screen: 640px;
 $tablet-screen: 768px;
 $desktop-screen: 1280px;
@@ -15,7 +15,7 @@ $large-screen: 1440px;
 
 @mixin screenSize($min-width) {
     @if $min-width == $small-screen {
-        @media (min-width: $small-screen) and (max-width: $mobile-screen - 1px) {
+        @media (max-width: $mobile-screen - 1px) {
             @content;
         }
     } @else if $min-width == $mobile-screen {

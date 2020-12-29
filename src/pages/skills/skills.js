@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import SkillPie from '../../components/skill/skill'
 
 function Skills() {
-    
+
     useEffect(() => {
         let greetingMessages = Array.prototype.slice.call(document.getElementsByClassName('text'));
         greetingMessages.forEach((greetingMessage, ind) => {
@@ -39,9 +39,7 @@ function Skills() {
         <div className='section'>
             <center><h1 className="text">SKILLS</h1></center>
             <div className="skill-container">
-                <div className="skill-column">
-                    {obj}
-                </div>
+                {obj}
             </div>
         </div>
     )

@@ -47,7 +47,7 @@
     }
 
     .skill-name {
-        width: 40vw;
+        width: 70vw;
         height: 1vh;
         text-align: left;
         p {
@@ -61,8 +61,8 @@
         height: 2vh;
         margin-left: 2vw;
         .skill-bar {
-            margin-top: 6%;
-            height: 1.5em;
+            margin-top: 3vh;
+            height: 1em;
             &:hover {
                 span {
                     font-size: 1em;
@@ -92,7 +92,7 @@
         height: 4vh;
         margin-left: 2vw;
         .skill-bar {
-            margin-top: 6%;
+            margin-top: 3vh;
             height: 1.5em;
             &:hover {
                 span {
@@ -123,7 +123,7 @@
         height: 4vh;
         margin-left: 2vw;
         .skill-bar {
-            margin-top: 6%;
+            margin-top: 4vh;
             height: 1.5em;
             &:hover {
                 span {
@@ -154,7 +154,7 @@
         height: 8vh;
         margin-left: 2vw;
         .skill-bar {
-            margin-top: 5%;
+            margin-top:3vh;
             height: 1.2em;
             &:hover {
                 span {
@@ -169,11 +169,11 @@
 @include screenSize($large-screen) {
     .skill {
         line-height: 1em;
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
     .skill-name {
-        width: 14vw;
+        width: 15vw;
         height: 8vh;
         p {
             font-size: 2em;
@@ -181,11 +181,11 @@
     }
 
     .skill-expertize {
-        width: 26vw;
+        width: 27vw;
         height: 8vh;
         margin-left: 2vw;
         .skill-bar {
-            margin-top: 5%;
+            margin-top: 8%;
             height: 1.5em;
             &:hover {
                 span {

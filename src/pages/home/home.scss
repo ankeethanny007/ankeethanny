@@ -11,7 +11,7 @@
   -ms-transform: translateY(-45%);
   transform: translateY(-45%);
   .text {
-    font-size: 70px;
+    font-size: 3em;
   }
   .button-cta {
     transition: $transition-time;
@@ -35,4 +35,59 @@
   float: right;
   width: 45%;
   margin-top: 20vh;
+}
+
+@include screenSize($small-screen) {
+  .text-area{
+    .text{
+      font-size: 2em;
+    }
+  }
+  .image-area {
+      display: none;
+  }
+}
+
+@include screenSize($mobile-screen) {
+  .text-area{
+    .text{
+      font-size: 2.5em;
+    }
+  }
+  .image-area {
+      display: none;
+  }
+}
+
+@include screenSize($tablet-screen) {
+  .text-area{
+    .text{
+      font-size: 2.5em;
+    }
+  }
+  .image-area {
+    display: none;
+}
+}
+
+@include screenSize($desktop-screen) {
+  .text-area{
+    .text{
+      font-size: 3em;
+    }
+  }
+  .image-area {
+      display: block;
+  }
+}
+
+@include screenSize($large-screen) {
+  .text-area{
+    .text{
+      font-size: 3em;
+    }
+  }
+  .image-area {
+      display: block;
+  }
 }

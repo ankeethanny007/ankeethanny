@@ -8,7 +8,7 @@ h1{
 
 .skill-container{
     position: fixed;
-    width: 85vw;
+    width: 88vw;
 }
 
 @include screenSize($small-screen) {
@@ -21,14 +21,28 @@ h1{
     }
 }
 
-// @include screenSize($mobile-screen) {
-// }
+@include screenSize($mobile-screen) {
+    h1{
+        margin: 10px;
+    }
+    
+    .skill-container{
+        margin-top: -30px;
+    }
+}
 
-// @include screenSize($tablet-screen) {
-// }
+@include screenSize($tablet-screen) {
+    h1{
+        margin: 10px;
+    }
+    
+    .skill-container{
+        margin-top: -30px;
+    }
+}
 
-// @include screenSize($desktop-screen) {
-// }
+@include screenSize($desktop-screen) {
+}
 
-// @include screenSize($large-screen) {
-// }
+@include screenSize($large-screen) {
+}
