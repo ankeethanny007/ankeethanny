@@ -2,6 +2,7 @@ import './home.scss';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ChromeDinoGame from 'react-chrome-dino';
+import $ from 'jquery'
 
 function Home() {
     useEffect(() => {
@@ -10,11 +11,21 @@ function Home() {
             let letters = greetingMessage.innerHTML.split('');
             let nHTML = ''
             for (var letter of letters) {
-                nHTML += "<span class='rubberBand'>" + letter + "</span>";
+                nHTML += letter === ' ' ? "<span class='rubberBand'> &nbsp; </span>" : "<span class='rubberBand'>" + letter + "</span>";
             }
             document.getElementsByClassName('text')[ind].innerHTML = nHTML;
         });
+
+        $(".rubberBand").hover(function () {
+            // alert("Hello")
+            $(this).addClass("animated");
+        })
+
+        $(".rubberBand").on("webkitAnimationEnd mozAnimationEnd animationend", function () {
+            $(this).removeClass("animated")
+        })
     });
+
     return (
         <div className='section'>
             <div className="text-area">

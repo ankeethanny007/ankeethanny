@@ -1,6 +1,7 @@
 import './skills.scss';
-import React, { useEffect } from 'react'
-import SkillPie from '../../components/skill/skill'
+import React, { useEffect } from 'react';
+import SkillPie from '../../components/skill/skill';
+import $ from 'jquery'
 
 function Skills() {
 
@@ -14,6 +15,15 @@ function Skills() {
             }
             document.getElementsByClassName('text')[ind].innerHTML = nHTML;
         });
+
+        $(".rubberBand").hover(function () {
+            // alert("Hello")
+            $(this).addClass("animated");
+        })
+
+        $(".rubberBand").on("webkitAnimationEnd mozAnimationEnd animationend", function () {
+            $(this).removeClass("animated")
+        })
     });
 
     const skills = [
