@@ -2,10 +2,10 @@
 
 #bottomnav {
     position: fixed;
-    width: 750px;
     bottom: 0;
-    left: 50%;
-    margin-left: -375px;
+    margin-left: calc(50% - 375px);
+    // left: 50%;
+    // margin-left: -375px;
     ul {
         list-style-type: none;
         margin: 0;
@@ -44,6 +44,28 @@
             background-color: $background-color-hover;
             a {
                 color: $text-color-hover;
+            }
+        }
+    }
+}
+
+@include screenSize($small-screen) {
+    #bottomnav {
+        margin-left: 0;
+        ul {
+            li {
+                width: 20vw;
+            }
+        }
+    }
+}
+
+@include screenSize($mobile-screen) {
+    #bottomnav {
+        margin-left: 0;
+        ul {
+            li {
+                width: 20vw;
             }
         }
     }

@@ -22,27 +22,13 @@
 
 @include screenSize($small-screen) {
   .section {
-    padding: 0;
-  }
-  .app-container {
-    position: relative;
-    height: 90vh;
-    top: 0;
-    width: 100vw;
-    left: 0;
+    padding: 0 1em;
   }
 }
 
 @include screenSize($mobile-screen) {
   .section {
-    padding: 0;
-  }
-  .app-container {
-    position: relative;
-    height: 90vh;
-    top: 0;
-    width: 100vw;
-    left: 0;
+    padding: 0 1em;
   }
 }
 
