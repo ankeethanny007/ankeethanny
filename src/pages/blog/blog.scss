@@ -1,1 +1,80 @@
-@import './../../styles/variable.scss';
+@import "./../../styles/variable.scss";
+
+.coming-soon {
+    .coming-soon-text-area {
+        font-size: 4em;
+        h2 {
+            width: fit-content;
+            transition: $transition-time;
+            &:hover {
+                transition: $transition-time;
+                text-shadow: 1px 3px 1px $text-color-hover;
+            }
+        }
+    }
+}
+
+.quote-section {
+    background-color: $background-color;
+    width: 70vw;
+    padding: 1em 2em;
+    border-radius: 7px;
+    p {
+        margin: 0px;
+    }
+    .quote {
+        font-size: 1.6em;
+    }
+    .author {
+        font-size: 1.4em;
+        text-align: right;
+    }
+}
+
+@include screenSize($small-screen) {
+    .coming-soon {
+        margin-top: 15vh;
+    }
+    .quote-section {
+        margin-top: 10vh;
+    }
+}
+
+@include screenSize($mobile-screen) {
+    .coming-soon {
+        margin-top: 25vh;
+        .coming-soon-text-area {
+            font-size: 3.0em;
+        }
+    }
+    .quote-section {
+        margin-top: 20vh;
+    }
+}
+
+@include screenSize($tablet-screen) {
+    .coming-soon {
+        margin-top: 25vh;
+    }
+    .quote-section {
+        margin-top: 20vh;
+    }
+}
+
+@include screenSize($desktop-screen) {
+    .coming-soon {
+        margin-top: 15vh;
+    }
+    .quote-section {
+        margin-top: 10vh;
+    }
+}
+
+@include screenSize($large-screen) {
+    .coming-soon {
+        margin-top: 20vh;
+    }
+    .quote-section {
+        margin-top: 20vh;
+    }
+}
