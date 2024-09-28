@@ -2,14 +2,14 @@ import './home.scss';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ChromeDinoGame from 'react-chrome-dino';
-import $ from 'jquery'
+import $ from 'jquery';
 
-function Home() {
+const Home = () => {
     useEffect(() => {
         let greetingMessages = Array.prototype.slice.call(document.getElementsByClassName('text'));
         greetingMessages.forEach((greetingMessage, ind) => {
             let letters = greetingMessage.innerHTML.split('');
-            let nHTML = ''
+            let nHTML = '';
             for (var letter of letters) {
                 nHTML += letter === ' ' ? "<span class='rubberBand'> &nbsp; </span>" : "<span class='rubberBand'>" + letter + "</span>";
             }
@@ -17,14 +17,19 @@ function Home() {
         });
 
         $(".rubberBand").hover(function () {
-            // alert("Hello")
             $(this).addClass("animated");
-        })
+        });
 
         $(".rubberBand").on("webkitAnimationEnd mozAnimationEnd animationend", function () {
-            $(this).removeClass("animated")
-        })
-    });
+            $(this).removeClass("animated");
+        });
+
+        // Cleanup function to remove event listeners
+        return () => {
+            $(".rubberBand").off("hover");
+            $(".rubberBand").off("webkitAnimationEnd mozAnimationEnd animationend");
+        };
+    }, []); // Run only once when the component mounts
 
     return (
         <div className='section'>

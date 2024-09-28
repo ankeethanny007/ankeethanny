@@ -1,42 +1,57 @@
 import './scroll-nav.scss';
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-class ScrollNav extends Component {
-    componentList = ['/about', '/skills', '/', '/blog', '/contact'];
-    currentPath = window.location.pathname;
+const ScrollNav = () => {
+    const componentList = ['/about', '/skills', '/', '/blog', '/contact'];
+    const [pathname, setPathname] = useState(window.location.pathname);
 
-    constructor(props) {
-        super(props);
-        setInterval(() => {
-            this.forceUpdate();
+    // Effect to simulate forceUpdate
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setPathname(window.location.pathname);
         }, 50);
-    }
 
-    handleButtonClick = (e) => {
-        console.log(e)
-    }
+        // Cleanup on component unmount
+        return () => clearInterval(intervalId);
+    }, []);
 
-    prevComponent = () => {
-        let pathPosition = this.componentList.indexOf(window.location.pathname);
-        return pathPosition === 0 ? this.componentList[this.componentList.length - 1] : this.componentList[pathPosition - 1]
-    }
+    const handleButtonClick = (e) => {
+        console.log(e);
+    };
 
-    nextComponent = () => {
-        let pathPosition = this.componentList.indexOf(window.location.pathname);
-        return pathPosition === this.componentList.length - 1 ? this.componentList[0] : this.componentList[pathPosition + 1]
-    }
+    const prevComponent = () => {
+        let pathPosition = componentList.indexOf(window.location.pathname);
+        return pathPosition === 0 ? componentList[componentList.length - 1] : componentList[pathPosition - 1];
+    };
 
-    render() {
-        return (
-            <div className='container'>
-                <Link to={this.nextComponent()}><FontAwesomeIcon className="right-navigation" onKeyDown={this.handleButtonClick} tabIndex="0" icon={faAngleDoubleRight} /></Link>
-                <Link to={this.prevComponent()}><FontAwesomeIcon className="left-navigation" onKeyDown={this.handleButtonClick} tabIndex="0" icon={faAngleDoubleLeft} /></Link>
-            </div>
-        )
-    }
-}
+    const nextComponent = () => {
+        let pathPosition = componentList.indexOf(window.location.pathname);
+        return pathPosition === componentList.length - 1 ? componentList[0] : componentList[pathPosition + 1];
+    };
+
+    return (
+        <div className="container">
+            <Link to={nextComponent()}>
+                <FontAwesomeIcon
+                    className="right-navigation"
+                    onKeyDown={handleButtonClick}
+                    tabIndex="0"
+                    icon={faAngleDoubleRight}
+                />
+            </Link>
+            <Link to={prevComponent()}>
+                <FontAwesomeIcon
+                    className="left-navigation"
+                    onKeyDown={handleButtonClick}
+                    tabIndex="0"
+                    icon={faAngleDoubleLeft}
+                />
+            </Link>
+        </div>
+    );
+};
 
 export default ScrollNav;

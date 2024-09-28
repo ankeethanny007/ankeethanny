@@ -2,7 +2,7 @@ import './blog.scss';
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 
-function Blog() {
+const Blog = () => {
     useEffect(() => {
         let greetingMessages = Array.prototype.slice.call(document.getElementsByClassName('text'));
         greetingMessages.forEach((greetingMessage, ind) => {

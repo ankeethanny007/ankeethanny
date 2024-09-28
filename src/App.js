@@ -1,6 +1,6 @@
 import './styles/App.scss';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/home/home'
 import Contact from './pages/contact/contact'
 import About from './pages/about/about'
@@ -11,13 +11,13 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/skills" exact component={Skills} />
-          <Route path="/contact" exact component={Contact} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </div>
   );

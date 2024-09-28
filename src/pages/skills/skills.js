@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import SkillPie from '../../components/skill/skill';
 import $ from 'jquery'
 
-function Skills() {
-
+const Skills = () => {
     useEffect(() => {
         let greetingMessages = Array.prototype.slice.call(document.getElementsByClassName('text'));
         greetingMessages.forEach((greetingMessage, ind) => {

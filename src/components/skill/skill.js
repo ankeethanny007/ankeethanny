@@ -1,29 +1,28 @@
-import './skill.scss'
-import React, { Component } from 'react'
+import './skill.scss';
+import React, { useState, useEffect } from 'react';
 
-class skillPie extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            width: this.props.expertize + '%',
-            hello: { 'width': this.props.expertize + '%' }
-        }
-    }
+const SkillPie = ({ skill, expertize }) => {
+    const [width, setWidth] = useState(expertize + '%');
+    const [hello, setHello] = useState({ width: expertize + '%' });
 
-    render() {
-        return (
-            <div>
-                <div className='skill skill-name'>
-                    <p>{this.props.skill}</p>
-                </div>
-                <div className='skill skill-expertize'>
-                    <div className='skill-bar' style={this.state.hello}>
-                        <span>{this.state.width}</span>
-                    </div>
+    useEffect(() => {
+        // Update state whenever the props change
+        setWidth(expertize + '%');
+        setHello({ width: expertize + '%' });
+    }, [expertize]); // Run effect only when 'expertize' changes
+
+    return (
+        <div>
+            <div className="skill skill-name">
+                <p>{skill}</p>
+            </div>
+            <div className="skill skill-expertize">
+                <div className="skill-bar" style={hello}>
+                    <span>{width}</span>
                 </div>
             </div>
-        )
-    }
-}
+        </div>
+    );
+};
 
-export default skillPie;
+export default SkillPie;
